@@ -1,0 +1,52 @@
+<!--
+  Generated template for the QuotesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Quotes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid fixed>
+    <ion-row>
+      
+            <ion-col size="12">
+              <ion-list *ngIf="quotes.length > 0">
+                         <ion-item detail  *ngFor="let quote of quotes"  > <!--we need to change this loop ! -->
+                          <ion-label text-wrap>
+                                <ion-item lines="none">
+                                  
+                                    <h2 [innerHTML]="quote.title.rendered" > </h2>
+                                  
+                                </ion-item>
+                                <ion-item lines="none">
+
+                                  <p>~ {{quote.writer}} </p>
+                                
+                                </ion-item>
+                          </ion-label>
+                        </ion-item>
+              </ion-list>
+
+              <ion-list *ngIf="quotes.length === 0">
+                <ion-item detail  *ngFor="let quote of [].constructor(10)"  > <!--we need to change this loop ! -->
+                 <ion-label text-wrap>
+                       <ion-item lines="none">
+                       </ion-item>
+                       <ion-item lines="none">
+                       </ion-item>
+                 </ion-label>
+               </ion-item>
+               </ion-list>
+              
+            </ion-col>
+            
+      
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
